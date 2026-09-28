@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DFA to NFA Converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>DFA → NFA Converter</h1>
+        <p class="subtitle">
+            Enter a DFA and convert it into its equivalent NFA.
+        </p>
+
+        <!-- DFA Input -->
+        <div class="card">
+            <h2>1. Enter DFA</h2>
+
+            <label>States</label>
+            <input
+                type="text"
+                id="states"
+                placeholder="Example: q0,q1,q2"
+            >
+
+            <label>Alphabet</label>
+            <input
+                type="text"
+                id="alphabet"
+                placeholder="Example: 0,1"
+            >
+
+            <label>Start State</label>
+            <input
+                type="text"
+                id="startState"
+                placeholder="Example: q0"
+            >
+
+            <label>Final States</label>
+            <input
+                type="text"
+                id="finalStates"
+                placeholder="Example: q2"
+            >
+
+            <button onclick="generateTable()">
+                Generate Transition Table
+            </button>
+        </div>
+
+        <!-- Transition Table -->
+        <div class="card" id="transitionSection" style="display: none;">
+            <h2>2. DFA Transition Table</h2>
+
+            <div id="transitionTable"></div>
+
+            <button onclick="convertToNFA()">
+                Convert DFA → NFA
+            </button>
+        </div>
+
+        <!-- NFA Output -->
+        <div class="card" id="nfaSection" style="display: none;">
+            <h2>3. Equivalent NFA</h2>
+
+            <div id="nfaTable"></div>
+
+            <div class="result">
+                <strong>Conversion Complete!</strong>
+                <p>
+                    Every DFA is also an NFA because an NFA can have
+                    exactly one transition for each state and input symbol.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
